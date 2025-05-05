@@ -161,21 +161,6 @@ export default function MessageSwiper() {
     preloadNextMessage();
   }, [currentIndex]);
 
-  const handleReset = () => {
-    // Create a fresh deep copy of initial messages with all read states reset to false
-    const resetMessages = getInitialMessages().map((msg) => ({
-      ...msg,
-      read: false,
-    }));
-
-    // Reset all state
-    setMessages(resetMessages);
-    setCurrentIndex(0);
-
-    // Reset all motion and animation states
-    resetCardState();
-  };
-
   if (currentIndex === -1 || messages.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-80 text-center">

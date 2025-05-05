@@ -10,6 +10,14 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    rules: {
+      "no-unused-vars": [
+        "warn",
+        { vars: "all", args: "after-used", ignoreRestSiblings: true },
+      ],
+    },
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
