@@ -237,7 +237,7 @@ export default function StructuredChat() {
     // Simulate typing delay (2 seconds)
     setTimeout(() => {
       // Hide typing indicator and add bot response
-      setIsTyping(false);
+      // setIsTyping(false);
 
       const botMessage: Message = {
         id: Date.now().toString(),
@@ -403,19 +403,24 @@ export default function StructuredChat() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 p-4">
-      <Tabs defaultValue="chat" className="w-full max-w-6xl mx-auto">
-        <TabsList className="grid w-full grid-cols-2 mb-4">
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <Tabs
+        defaultValue="chat"
+        className="w-full max-w-6xl mx-auto h-full flex-1 p-4">
+        {/* add hidden to the tablist */}
+        <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="chat">Chat</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="chat" className="w-full">
-          <Card className="w-full">
-            <CardHeader>
-              <CardTitle>Chat with Your Special Someone</CardTitle>
+        <TabsContent value="chat" className="w-full flex-1 flex">
+          <Card className="w-full flex-1 bg-transparent border-transparent shadow-none">
+            <CardHeader className="p-0">
+              <CardTitle className="font-extrabold text-2xl">
+                Chat with Your Special Someone ❤️
+              </CardTitle>
             </CardHeader>
-            <CardContent className="h-[60vh] overflow-y-auto">
+            <CardContent className="h-full overflow-y-auto p-0">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -423,9 +428,9 @@ export default function StructuredChat() {
                     message.sender === "user" ? "text-right" : "text-left"
                   }`}>
                   <span
-                    className={`inline-block p-3 rounded-lg ${
+                    className={`inline-block p-3 rounded-lg font-medium ${
                       message.sender === "user"
-                        ? "bg-pink-500 text-white"
+                        ? "bg-pink-600 text-white"
                         : "bg-gray-200 text-gray-800"
                     }`}>
                     {message.content}
@@ -465,7 +470,7 @@ export default function StructuredChat() {
               )}
               <div ref={messagesEndRef} />
             </CardContent>
-            <CardFooter className="flex flex-col items-stretch">
+            <CardFooter className="flex flex-col items-stretch p-0">
               {currentPromptIndex < prompts.length &&
                 !showVideo &&
                 !isTyping && (
@@ -481,7 +486,7 @@ export default function StructuredChat() {
                   </div>
                 )}
 
-              {(showVideo || messages.length > 1) && (
+              {showVideo && (
                 <Button onClick={resetChat} variant="outline" className="mt-2">
                   Reset Chat
                 </Button>
