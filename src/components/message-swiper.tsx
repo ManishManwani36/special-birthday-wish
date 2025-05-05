@@ -191,7 +191,7 @@ export default function MessageSwiper() {
     currentIndex < messages.length - 1 ? messages[currentIndex + 1] : null;
 
   return (
-    <div className="relative h-full w-full flex flex-col gap-2">
+    <div className="relative h-full w-full flex flex-col gap-4">
       <div className="relative w-full h-[400px]">
         {/* Action indicators */}
         <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-20">
@@ -242,7 +242,7 @@ export default function MessageSwiper() {
           className="absolute top-0 left-0 w-full h-full z-10">
           <Card
             className={cn(
-              "w-full h-full shadow-lg border-2",
+              "w-full h-full shadow-lg border-2 p-0",
               direction === "left"
                 ? "border-red-500"
                 : direction === "right"
