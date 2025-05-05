@@ -495,12 +495,12 @@ export default function StructuredChat() {
           </Card>
         </TabsContent>
 
-        <TabsContent value="settings" className="w-full">
-          <Card>
-            <CardHeader>
+        <TabsContent value="settings" className="w-full flex-1 flex">
+          <Card className="w-full flex-1 bg-transparent border-transparent shadow-none">
+            <CardHeader className="p-0">
               <CardTitle>Customize Your Conversation Flow</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 p-0">
               <div>
                 <h3 className="text-lg font-medium mb-2">Final Video</h3>
                 <div className="space-y-3">
@@ -529,7 +529,7 @@ export default function StructuredChat() {
                 </div>
               </div>
 
-              <div>
+              <div className="">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-medium">Conversation Prompts</h3>
                   <Button
