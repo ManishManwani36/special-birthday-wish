@@ -161,6 +161,23 @@ export default function MessageSwiper() {
     preloadNextMessage();
   }, [currentIndex]);
 
+  const handleReset = () => {
+    router.push("/chat");
+    // // Create a fresh deep copy of initial messages with all read states reset to false
+
+    // const resetMessages = getInitialMessages().map((msg) => ({
+    //   ...msg,
+    //   read: false,
+    // }));
+
+    // // Reset all state
+    // setMessages(resetMessages);
+    // setCurrentIndex(0);
+
+    // // Reset all motion and animation states
+    // resetCardState();
+  };
+
   if (currentIndex === -1 || messages.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-80 text-center">
@@ -174,7 +191,7 @@ export default function MessageSwiper() {
         <span className="mt-4 relative inline-flex">
           <button
             className="px-4 py-2 bg-pink-200 font-bold text-pink-800 hover:bg-pink-200 rounded-md transition-colors relative"
-            onClick={() => router.push("/chat")}>
+            onClick={handleReset}>
             🤭 Go to chat
           </button>
           <span className="absolute top-0 right-0 -mt-1 -mr-1 flex size-3">
