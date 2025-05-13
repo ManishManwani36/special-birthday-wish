@@ -311,27 +311,27 @@ export default function StructuredChat() {
     }, 2000);
   };
 
-  const resetChat = () => {
-    if (prompts.length > 0) {
-      setMessages([]);
-      setCurrentPromptIndex(0);
-      setShowVideo(false);
+  // const resetChat = () => {
+  //   if (prompts.length > 0) {
+  //     setMessages([]);
+  //     setCurrentPromptIndex(0);
+  //     setShowVideo(false);
 
-      // Show typing indicator
-      setIsTyping(true);
+  //     // Show typing indicator
+  //     setIsTyping(true);
 
-      // Show first message after 2 seconds
-      setTimeout(() => {
-        setIsTyping(false);
-        const initialMessage: Message = {
-          id: Date.now().toString(),
-          content: prompts[0].message,
-          sender: "bot",
-        };
-        setMessages([initialMessage]);
-      }, 2000);
-    }
-  };
+  //     // Show first message after 2 seconds
+  //     setTimeout(() => {
+  //       setIsTyping(false);
+  //       const initialMessage: Message = {
+  //         id: Date.now().toString(),
+  //         content: prompts[0].message,
+  //         sender: "bot",
+  //       };
+  //       setMessages([initialMessage]);
+  //     }, 2000);
+  //   }
+  // };
 
   // Prompt management functions
   const addPrompt = () => {
