@@ -20,7 +20,7 @@ import ManishShowcase from "../../public/images/manishShowcase.png";
 import ArshiyaProfile from "../../public/images/arshiyaProfile.png";
 import ArshiyaShowcase from "../../public/images/arshiyaShowcase.png";
 import AditProfile from "../../public/images/aditProfile.png";
-import AditShowcase from "../../public/images/aditShowcase.png";
+// import AditShowcase from "../../public/images/aditShowcase.png";
 import AnanyaProfile from "../../public/images/ananyaProfile.png";
 import AnanyaShowcase from "../../public/images/ananyaShowcase.png";
 
