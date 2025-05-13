@@ -24,7 +24,6 @@ export default function Home() {
         />
       )}
       <div className="w-full h-full max-w-md mx-auto">
-        <h1 className="text-2xl font-bold text-center mb-8">Message Inbox</h1>
         <MessageSwiper />
       </div>
     </main>

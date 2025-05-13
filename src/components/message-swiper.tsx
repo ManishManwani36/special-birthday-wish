@@ -12,52 +12,73 @@ import { Check, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import Image, { StaticImageData } from "next/image";
+import AaryanProfile from "../../public/images/aaryanProfile.png";
+import AaryanShowcase from "../../public/images/test.jpeg";
+import ManishProfile from "../../public/images/manishProfile.png";
+import ManishShowcase from "../../public/images/manishShowcase.png";
+import ArshiyaProfile from "../../public/images/arshiyaProfile.png";
+import ArshiyaShowcase from "../../public/images/arshiyaShowcase.png";
+import AditProfile from "../../public/images/aditProfile.png";
+import AditShowcase from "../../public/images/aditShowcase.png";
+import AnanyaProfile from "../../public/images/ananyaProfile.png";
+import AnanyaShowcase from "../../public/images/ananyaShowcase.png";
 
 // Sample message data - using a function to ensure fresh data each time
 const getInitialMessages = () => [
   {
     id: 1,
-    sender: "John Doe",
-    subject: "Project Update",
+    sender: "Ananya Mazumdar",
+    subject: "Happy Birthday Dear 😘",
+    profileImage: AnanyaProfile,
+    showcaseImage: AnanyaShowcase,
     preview:
-      "I've completed the first phase of the project and would like to discuss the next steps.",
-    timestamp: "10:30 AM",
+      "Happy birthday VANSHIKAAA🥳🫶🏻.It has been one of my life’s greatest pleasures meeting you. Even though we spent like 3 days together i think i love you. Youre beautiful and smart and kind and i enjoy your presence thoroughly 🙂‍↕️ I hope you become a great lawyer so if a patient ever sues me ill know who to call. Have a great day sweetu♥️",
+    timestamp: "14/05/25",
     read: false,
   },
   {
     id: 2,
-    sender: "Jane Smith",
+    sender: "Adit Bidani",
     subject: "Meeting Tomorrow",
+    profileImage: AditProfile,
+    showcaseImage: AaryanShowcase,
     preview:
       "Just a reminder that we have a team meeting scheduled for tomorrow at 2 PM.",
-    timestamp: "Yesterday",
+    timestamp: "14/05/25",
     read: false,
   },
   {
     id: 3,
-    sender: "Alex Johnson",
+    sender: "Arshiya Bidani",
     subject: "New Feature Request",
+    profileImage: ArshiyaProfile,
+    showcaseImage: ArshiyaShowcase,
     preview:
       "The client has requested a new feature for the application. Let's discuss it soon.",
-    timestamp: "Yesterday",
+    timestamp: "14/05/25",
     read: false,
   },
   {
     id: 4,
-    sender: "Sarah Williams",
-    subject: "Vacation Plans",
+    sender: "Manish Manwani",
+    subject: "Happy brithday broski",
+    profileImage: ManishProfile,
+    showcaseImage: ManishShowcase,
     preview:
-      "I'll be on vacation next week. Can you cover for me during that time?",
-    timestamp: "2 days ago",
+      "Hope you have jolly good birthday mate! May all your dreams come true and you have a fantastic year ahead. Sending you lots of love and best wishes from Sydney. Cheers to you! 🎂🥳",
+    timestamp: "14/05/25",
     read: false,
   },
   {
     id: 5,
-    sender: "Michael Brown",
-    subject: "Bug Report",
+    sender: "Aaryan baby",
+    subject: "Der Geburtstag meines Lieblingsmädchens",
+    profileImage: AaryanProfile,
+    showcaseImage: AaryanShowcase,
     preview:
-      "I found a critical bug in the latest release. We need to fix it ASAP.",
-    timestamp: "3 days ago",
+      "Happy birthdayyyy my loveee. I miss you soooo much. I know it would have been better if I was there and we could celebrate your birthday in person but I will try and make it the best day of your year. One year back we were just a situationship but look at us now, dating and me getting excited for your birthday. I hope to see you soon cutu. I love youuuu",
+    timestamp: "14/05/25",
     read: false,
   },
 ];
@@ -69,6 +90,8 @@ type Message = {
   preview: string;
   timestamp: string;
   read: boolean;
+  profileImage: StaticImageData;
+  showcaseImage: StaticImageData;
 };
 
 export default function MessageSwiper() {
@@ -208,8 +231,17 @@ export default function MessageSwiper() {
     currentIndex < messages.length - 1 ? messages[currentIndex + 1] : null;
 
   return (
-    <div className="relative h-full w-full flex flex-col gap-4">
-      <div className="relative w-full h-[400px]">
+    <div className="relative h-full w-full flex flex-col gap-2">
+      <h1 className="text-2xl font-bold text-center">Message Inbox</h1>
+      {/* Instructions */}
+      <div className="w-full text-center text-sm text-gray-500 flex gap-2 items-center justify-center">
+        <p className="text-red-500/50 font-bold">Swipe left if you hate it</p>
+        <p className="text-green-500/50 font-bold">
+          {" "}
+          Swipe right if you love it
+        </p>
+      </div>
+      <div className="relative w-full h-[600px]">
         {/* Action indicators */}
         <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-20">
           <motion.div
@@ -232,18 +264,37 @@ export default function MessageSwiper() {
           <motion.div
             className="absolute top-0 left-0 w-full h-full"
             style={{ opacity: backgroundOpacity }}>
-            <Card className="w-full h-full shadow-md">
+            <Card className="w-full h-full shadow-md p-0">
               <CardContent className="p-6 h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-semibold text-lg">
-                    {nextMessage.sender}
-                  </h3>
-                  <span className="text-sm text-gray-500">
+                <div className="flex justify-between items-start mb-2">
+                  <div className="flex gap-2 items-center justify-center">
+                    <h3 className="font-semibold text-lg">
+                      {nextMessage.sender}
+                    </h3>
+                    <div className="object-cover w-10 h-10 overflow-hidden flex items-center justify-center rounded-full">
+                      <Image
+                        src={nextMessage.profileImage}
+                        alt="profile image"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                  </div>
+                  <span className="text-sm text-gray-500 h-full flex items-center">
                     {nextMessage.timestamp}
                   </span>
                 </div>
                 <h4 className="font-medium mb-2">{nextMessage.subject}</h4>
-                <p className="text-gray-600 flex-grow">{nextMessage.preview}</p>
+                <p className="text-gray-600 mb-2">{nextMessage.preview}</p>
+                <div className="object-cover w-full h-20 flex-grow overflow-hidden flex items-center justify-center rounded-2xl">
+                  <Image
+                    className="scale-125"
+                    src={nextMessage.showcaseImage}
+                    alt="showcaseImage"
+                    width={500}
+                    height={500}
+                  />
+                </div>
               </CardContent>
             </Card>
           </motion.div>
@@ -267,21 +318,37 @@ export default function MessageSwiper() {
                 : "border-transparent"
             )}>
             <CardContent className="p-6 h-full flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-lg">
-                  {currentMessage.sender}
-                </h3>
-                <span className="text-sm text-gray-500">
+              <div className="flex justify-between items-start mb-2">
+                <div className="flex gap-2 items-center justify-center">
+                  <h3 className="font-semibold text-lg">
+                    {currentMessage.sender}
+                  </h3>
+                  <div className="object-cover w-10 h-10 overflow-hidden flex items-center justify-center rounded-full">
+                    <Image
+                      src={currentMessage.profileImage}
+                      alt="profile image"
+                      width={40}
+                      height={40}
+                    />
+                  </div>
+                </div>
+                <span className="text-sm text-gray-500 h-full flex items-center">
                   {currentMessage.timestamp}
                 </span>
               </div>
               <h4 className="font-medium mb-2">{currentMessage.subject}</h4>
-              <p className="text-gray-600 flex-grow">
-                {currentMessage.preview}
-              </p>
-
+              <p className="text-gray-600 mb-2">{currentMessage.preview}</p>
+              <div className="object-cover w-full h-20 flex-grow overflow-hidden flex items-center justify-center rounded-2xl">
+                <Image
+                  className="scale-125"
+                  src={currentMessage.showcaseImage}
+                  alt="showcaseImage"
+                  width={500}
+                  height={500}
+                />
+              </div>
               {/* Action buttons */}
-              <div className="flex justify-between items-center mt-6 gap-4">
+              {/* <div className="flex justify-between items-center mt-6 gap-4">
                 <button
                   onClick={async () => {
                     setDirection("left");
@@ -311,14 +378,10 @@ export default function MessageSwiper() {
                   <Check size={18} />
                   <span>Mark Read</span>
                 </button>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </motion.div>
-      </div>
-      {/* Instructions */}
-      <div className="w-full text-center text-sm text-gray-500">
-        <p>Swipe left to mark as unread, swipe right to mark as read</p>
       </div>
     </div>
   );

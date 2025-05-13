@@ -110,13 +110,13 @@ export default function StructuredChat() {
           id: "1-1",
           text: "I'm doing great! How about you?",
           response:
-            "I'm so happy to hear that! I've been thinking about our special memories together.",
+            "I am excited cuz its your birthday. My baby is 21 yay. I was thinking about all the memories we have made together.",
         },
         {
           id: "1-2",
           text: "I miss you",
           response:
-            "I miss you too! I was just reminiscing about our time together.",
+            "I miss you too babe and that is why I thought we should revisit some of our favourite memories together.",
         },
         {
           id: "1-3",
@@ -137,11 +137,11 @@ export default function StructuredChat() {
           id: "2-1",
           text: "Our first date",
           response:
-            "That was magical! I'll never forget how nervous I was and how beautiful you looked.",
+            "That was magical! I'll never forget how nervous I was and how beautiful you looked in the streets of Khan Market hehe",
         },
         {
           id: "2-2",
-          text: "That trip to the beach",
+          text: "That trip to the Mumbai",
           response:
             "The sunset was perfect that day, but not as perfect as you.",
         },
@@ -180,7 +180,7 @@ export default function StructuredChat() {
             "Definitely! You always know how to make me laugh, even on my worst days.",
         },
       ],
-      useCommonResponse: false,
+      useCommonResponse: true,
       commonResponse:
         "That and so much more! Everything about you is perfect to me.",
     },
@@ -408,7 +408,7 @@ export default function StructuredChat() {
         defaultValue="chat"
         className="w-full max-w-6xl mx-auto h-full flex-1 p-4">
         {/* add hidden to the tablist */}
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-2 hidden">
           <TabsTrigger value="chat">Chat</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
