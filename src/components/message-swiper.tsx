@@ -17,10 +17,14 @@ import AaryanProfile from "../../public/images/aaryanProfile.png";
 import AaryanShowcase from "../../public/images/test.jpeg";
 import ManishProfile from "../../public/images/manishProfile.png";
 import ManishShowcase from "../../public/images/manishShowcase.png";
+import SiddhantProfile from "../../public/images/siddhantProfile.png";
+import SiddhantShowcase from "../../public/images/siddhantShowcase.png";
 import ArshiyaProfile from "../../public/images/arshiyaProfile.png";
 import ArshiyaShowcase from "../../public/images/arshiyaShowcase.png";
+import AndreaProfile from "../../public/images/andreaProfile.png";
+import AndreaShowcase from "../../public/images/andreaShowcase.png";
 import AditProfile from "../../public/images/aditProfile.png";
-// import AditShowcase from "../../public/images/aditShowcase.png";
+import AditShowcase from "../../public/images/aditShowcase.png";
 import AnanyaProfile from "../../public/images/ananyaProfile.png";
 import AnanyaShowcase from "../../public/images/ananyaShowcase.png";
 
@@ -29,33 +33,32 @@ const getInitialMessages = () => [
   {
     id: 1,
     sender: "Ananya Mazumdar",
-    subject: "Happy Birthday Dear 😘",
+    subject: "Happy birthday VANSHIKAAA🥳🫶🏻",
     profileImage: AnanyaProfile,
     showcaseImage: AnanyaShowcase,
     preview:
-      "Happy birthday VANSHIKAAA🥳🫶🏻.It has been one of my life’s greatest pleasures meeting you. Even though we spent like 3 days together i think i love you. Youre beautiful and smart and kind and i enjoy your presence thoroughly 🙂‍↕️ I hope you become a great lawyer so if a patient ever sues me ill know who to call. Have a great day sweetu♥️",
+      "It has been one of my life’s greatest pleasures meeting you. Even though we spent like 3 days together i think i love you. Youre beautiful and smart and kind and i enjoy your presence thoroughly 🙂‍↕️ I hope you become a great lawyer so if a patient ever sues me ill know who to call. Have a great day sweetu♥️",
     timestamp: "14/05/25",
     read: false,
   },
   {
     id: 2,
     sender: "Adit Bidani",
-    subject: "Meeting Tomorrow",
+    subject: "hbd",
     profileImage: AditProfile,
-    showcaseImage: AaryanShowcase,
-    preview:
-      "Just a reminder that we have a team meeting scheduled for tomorrow at 2 PM.",
+    showcaseImage: AditShowcase,
+    preview: "happy birthday vanshan",
     timestamp: "14/05/25",
     read: false,
   },
   {
     id: 3,
     sender: "Arshiya Bidani",
-    subject: "New Feature Request",
+    subject: "Happiest 21st babydoll ❤️❤️ ",
     profileImage: ArshiyaProfile,
     showcaseImage: ArshiyaShowcase,
     preview:
-      "The client has requested a new feature for the application. Let's discuss it soon.",
+      "You are the most sweetest and the most amazing human I have ever met. You literally bring light and joy into a room 🥺💋Thank you for being in all our lives and making us all so happy. You deserve everything and more today ❤️",
     timestamp: "14/05/25",
     read: false,
   },
@@ -72,6 +75,29 @@ const getInitialMessages = () => [
   },
   {
     id: 5,
+    sender: "Siddhant",
+    subject:
+      "To my youngest and the jolliest sister Meethi (Maybe coz you have not tasted 3rd year yet)",
+    profileImage: SiddhantProfile,
+    showcaseImage: SiddhantShowcase,
+    preview:
+      "So i don't do appreciation but the way you can hold a smile even when the world is crashing around you is so admirable. But the way you can cry on a call with me makes our relationship so special. Give it a day more post your bday and then it's time for a la fiesta supremo. I wanna tell you so many things but I do not want to make this post emotional So I ll just want to say bloody learn to keep your sneakers clean. A very happy birthday kiddo",
+    timestamp: "14/05/25",
+    read: false,
+  },
+  {
+    id: 6,
+    sender: "Andrea",
+    subject: "happy birthday meethi,",
+    profileImage: AndreaProfile,
+    showcaseImage: AndreaShowcase,
+    preview:
+      "you bring along with you this laughter and warmth and sunshine everywhere you go and yet somehow manage to do this with a silent maturity and emotional intelligence. You are a very special person in my life, especially as the first person I ever spoke spoke to at Jindal and while my awkwardness came across as insane yapping I'm glad you stuck around to find out that I am indeed an insane yapper only! I hope you know that I am forever so proud of you and how you handle life and I know that even in scenarios where you haven't been dealt the best cards in life juari that you are you'll still end up winning the game screams Cabo irrationally outta nowhere. Whether it be the late night convos with you where I was given diabolical information while kapoor sleeps in ignorance or the times you opened your heart to me with such faith and trust that it made me love you all over again, these are all moments I will hold dear for the rest of my life and wherever we go and whoever we become, i will always speak of you as one of the best things i earned at law school. We are quite different people but I think we come together in ways that are so beautiful especially in the moments where it matters, I always know if the need ever arises you've got my back and I hope you know that the inverse is equally true, thank you for replicating the kind of warmth I would only expect from family in the room. If there's a reason I tend to call the hostel my home, the biggest part of that is you and kapoor. Here's to few more years of law school, assignments, meltdowns, occasional bhandi that doesn't end in sprains, an infinite number of card games and many many more years of friendship. You have family in us <3 ~Love Andhra",
+    timestamp: "14/05/25",
+    read: false,
+  },
+  {
+    id: 7,
     sender: "Aaryan baby",
     subject: "Der Geburtstag meines Lieblingsmädchens",
     profileImage: AaryanProfile,
@@ -285,7 +311,9 @@ export default function MessageSwiper() {
                   </span>
                 </div>
                 <h4 className="font-medium mb-2">{nextMessage.subject}</h4>
-                <p className="text-gray-600 mb-2">{nextMessage.preview}</p>
+                <p className="text-gray-600 mb-2 max-h-[200px] overflow-scroll">
+                  {nextMessage.preview}
+                </p>
                 <div className="object-cover w-full h-20 flex-grow overflow-hidden flex items-center justify-center rounded-2xl">
                   <Image
                     className="scale-125"
@@ -337,7 +365,9 @@ export default function MessageSwiper() {
                 </span>
               </div>
               <h4 className="font-medium mb-2">{currentMessage.subject}</h4>
-              <p className="text-gray-600 mb-2">{currentMessage.preview}</p>
+              <p className="text-gray-600 mb-2 max-h-[200px] overflow-scroll">
+                {currentMessage.preview}
+              </p>
               <div className="object-cover w-full h-20 flex-grow overflow-hidden flex items-center justify-center rounded-2xl">
                 <Image
                   className="scale-125"

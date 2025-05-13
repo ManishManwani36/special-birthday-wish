@@ -93,7 +93,7 @@ export default function StructuredChat() {
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
   const [videoUrl, setVideoUrl] = useState(
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "https://rdvs21sr88.ufs.sh/f/s3nfBmqMFiPznFahl20y4zuStmYao6D92OXFQwAHV1Mr8Iej"
   );
   const [finalMessage, setFinalMessage] = useState(
     "I wanted to share this special moment with you ❤️"
@@ -183,6 +183,26 @@ export default function StructuredChat() {
       useCommonResponse: true,
       commonResponse:
         "That and so much more! Everything about you is perfect to me.",
+    },
+    {
+      id: "4",
+      title: "Friends",
+      message: "Do you miss me and your friends?",
+      options: [
+        {
+          id: "4-1",
+          text: "Yes",
+          response:
+            "awwww.... well a video shall be played next to show our best memories.",
+        },
+        {
+          id: "4-2",
+          text: "No",
+          response: "hmmmm..... too bad we miss you ❤️",
+        },
+      ],
+      useCommonResponse: false,
+      commonResponse: "",
     },
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -461,7 +481,7 @@ export default function StructuredChat() {
                     <video
                       controls
                       autoPlay
-                      className="rounded-lg max-w-full max-h-[300px]"
+                      className="rounded-lg max-w-full max-h-[500px]"
                       src={videoUrl}>
                       Your browser does not support the video tag.
                     </video>
@@ -486,11 +506,11 @@ export default function StructuredChat() {
                   </div>
                 )}
 
-              {showVideo && (
+              {/* {showVideo && (
                 <Button onClick={resetChat} variant="outline" className="mt-2">
                   Reset Chat
                 </Button>
-              )}
+              )} */}
             </CardFooter>
           </Card>
         </TabsContent>
